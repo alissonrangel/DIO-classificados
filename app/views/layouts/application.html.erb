@@ -13,10 +13,15 @@
   <body>
     <p>
       <%= flash.notice %>
+      <%= flash.alert %>
     </p>
     <nav>
-      <%= link_to t("menu.signup"), new_user_path %>
-      <%= link_to t("menu.signin"), new_session_path %>
+      <% if user_signed_in? %>
+        <%= link_to t("menu.logout"), '/sessions/logout' %>
+      <% else %>
+        <%= link_to t("menu.signup"), new_user_path %>
+        <%= link_to t("menu.signin"), new_session_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>

@@ -4,9 +4,17 @@ class SessionsController < ApplicationController
     end
     def create
         user = User.find_by(email: params[:user][:email])
-        user.authenticate(params[:user][:password])
+        if user && user.authenticate(params[:user][:password])
+            reset_session
+            session[:user_id] = user.id
+            redirect_to root_path, notice: t(".welcome", name: user.name)
+        else
+            redirect_to new_session_path, alert: t(".invalid_credentials", name: user.name)
+        end
+    end
+
+    def logout
         reset_session
-        session[:user_id] = user.id
-        redirect_to root_path, notice: t(".welcome", name: user.name)
+        redirect_to new_session_path, notice: t(".goodnight")
     end
 end

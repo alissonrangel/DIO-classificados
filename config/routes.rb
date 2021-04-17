@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   '''
 
   # get "/sessions/new", to: "sessions#new"
-
+  get "/sessions/logout", to: "sessions#logout"
+  
   resources :sessions, only: [:new, :create]
 end
