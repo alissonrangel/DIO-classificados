@@ -4,3 +4,4 @@ pt-BR:
       user:
         create: "Cadastrar"
         update: "Atualizar perfil"
+      login: "Entrar"
