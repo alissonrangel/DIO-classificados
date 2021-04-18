@@ -18,5 +18,13 @@ Rails.application.routes.draw do
   # get "/sessions/new", to: "sessions#new"
   get "/sessions/logout", to: "sessions#logout"
   
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create] do
+    member do
+      # "/sessions/:id"
+    end
+    collection do 
+      # "/sessions/"
+      delete "sign_out", to: "sessions#destroy", as: "sign_out"
+    end
+  end
 end
