@@ -2,12 +2,16 @@
 
 <div>
   <ul>
-    <% @ads.each do |add| %>
+    <% @ads.each do |ad| %>
       <li>
-        <strong><%= add.title %></strong>
+        <strong><%= ad.title %></strong>
         <p>
-          <%= add.description %>
+          <%= ad.description %>
         </p>
+        <p>
+          R$ <%= ad.price %>
+        </p>
+        <%= link_to 'editar', edit_ad_path(ad) %>
       </li>
     <% end %>
   </ul>
