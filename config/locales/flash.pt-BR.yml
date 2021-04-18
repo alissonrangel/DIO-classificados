@@ -1,4 +1,7 @@
 pt-BR:
+  ads:
+    create:
+      add_ads_success: "Anúncio criado com sucesso"
   sessions:
     create:
       welcome: "Bem vindo %{name}!"

@@ -1,6 +1,8 @@
 pt-BR:
   helpers:
     submit:
+      ad:
+        create: "Criar"
       user:
         create: "Cadastrar"
         update: "Atualizar perfil"
