@@ -27,4 +27,6 @@ Rails.application.routes.draw do
       delete "sign_out", to: "sessions#destroy", as: "sign_out"
     end
   end
+
+  resources :ads, only:[:new, :create]
 end
