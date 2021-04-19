@@ -30,6 +30,15 @@ class AdsController < ApplicationController
         end
     end
 
+    def destroy
+      @ad = current_user.ads.find(params[:id])
+      if @ad.destroy          
+        redirect_to root_path, notice: t(".delete_ads_success")
+      else
+        redirect_to root_path, alert: "Falha ao excluir o anúncio!"
+      end
+    end
+
     private 
 
     def ad_params

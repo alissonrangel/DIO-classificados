@@ -2,6 +2,8 @@ pt-BR:
   ads:
     create:
       add_ads_success: "Anúncio criado com sucesso"
+    destroy:
+      delete_ads_success: "Anúncio excluído com sucesso"
   sessions:
     create:
       welcome: "Bem vindo %{name}!"

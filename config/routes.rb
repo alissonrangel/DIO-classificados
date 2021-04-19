@@ -28,5 +28,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :ads, only:[:new, :create, :edit, :update]
+  resources :ads, only:[:new, :create, :edit, :update, :destroy]  
 end

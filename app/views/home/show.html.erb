@@ -19,6 +19,7 @@
           <td>
             <% if ad.user === current_user %>
               <%= link_to 'editar', edit_ad_path(ad) %>
+              <%= link_to 'excluir', ad_path(ad), method: :delete, style: 'color: red' %>
             <% else %>
               Sem ação
             <% end %>
