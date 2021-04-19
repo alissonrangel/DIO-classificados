@@ -1,33 +1,31 @@
 <h1><%= t("title.signup") %></h1>
 
 <% if @user.errors.any? %>
-    <p><%= t("title.error") %></p>
-    <ul>
-        <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-        <% end %>
-    </ul>
+    <p style="color:red"><%= t("title.error") %></p>
+    <% @user.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger" role="alert"><%= message %></div></li>
+    <% end %>   
 <% end %>
 
 <%= form_for @user, url: "/users" do |form| %>
 
-    <div>
+    <div class="form-group">
         <%= form.label :name%>
-        <%= form.text_field :name %>
+        <%= form.text_field :name, class: 'form-control' %>
     </div>
-    <div>
+    <div class="form-group">
         <%= form.label :email%>
-        <%= form.email_field :email %>
+        <%= form.email_field :email, class: 'form-control' %>
     </div>
-    <div>
+    <div class="form-group">
         <%= form.label :password %>
-        <%= form.password_field :password %>
+        <%= form.password_field :password, class: 'form-control' %>
     </div>
-    <div>
+    <div class="form-group">
         <%= form.label :password_confirmation %>
-        <%= form.password_field :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: 'form-control' %>
     </div>
     <div>
-        <%= form.submit %>
+        <%= form.submit class: 'btn btn-primary' %>
     </div>
 <% end %>
